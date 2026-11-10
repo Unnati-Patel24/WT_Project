@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ====================================================================
+         POLISH AND PETALS NAIL STUDIO - BOOKING PAGE (fig 1.4)
+         Folder: client/
+         ==================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish and Petals - Book Appointment</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-left">
+            <div class="brand-logo-icon" title="Polish & Petals Studio">💅</div>
+        </div>
+
+        <div class="header-center">
+            <h1 class="brand-title">POLISH AND PETALS</h1>
+            <p class="brand-subtitle">Little Art on Every Fingertip</p>
+            <div class="heart-icons">♥ ♥ ♥</div>
+        </div>
+
+        <div class="header-right">
+            <a href="../admin/adminlogin.html" class="profile-login-link" title="Admin Portal">
+                <span>👤</span>
+                <span>Admin</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">SERVICES</a></li>
+            <li class="nav-item"><a href="gallery.html" class="nav-link">GALLERY</a></li>
+            <li class="nav-item"><a href="booking.html" class="nav-link active">BOOK APPOINTMENT</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="page-container">
+        <h2 class="section-title">BOOK YOUR APPOINTMENT</h2>
+
+        <div class="form-card">
+            <form action="contact.html" method="get">
+                <div class="form-grid-2col">
+                    <div class="form-col-left">
+                        <div class="form-group">
+                            <label class="form-label" for="full-name">Full Name :</label>
+                            <input type="text" id="full-name" name="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email-addr">Email :</label>
+                            <input type="email" id="email-addr" name="email" class="form-control" placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="mobile-num">Mobile Number :</label>
+                            <input type="tel" id="mobile-num" name="mobile" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Gender :</label>
+                            <div class="options-inline">
+                                <label class="radio-label"><input type="radio" name="gender" value="Female" checked> Female</label>
+                                <label class="radio-label"><input type="radio" name="gender" value="Male"> Male</label>
+                                <label class="radio-label"><input type="radio" name="gender" value="Other"> Other</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="service-select">Service :</label>
+                            <select id="service-select" name="service" class="form-control" required>
+                                <option value="">-- Select Service --</option>
+                                <option value="Basic Manicure">Basic Manicure (₹300)</option>
+                                <option value="Gel Nails">Gel Nails (₹900)</option>
+                                <option value="Nail Extension">Nail Extension (₹1500)</option>
+                                <option value="Nail Art">Nail Art (₹700)</option>
+                                <option value="Spa Manicure">Spa Manicure (₹600)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="appoint-date">Appointment Date :</label>
+                            <input type="date" id="appoint-date" name="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="appoint-time">Appointment Time :</label>
+                            <select id="appoint-time" name="time" class="form-control" required>
+                                <option value="">-- Select Time --</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:30 AM">11:30 AM</option>
+                                <option value="01:00 PM">01:00 PM</option>
+                                <option value="02:30 PM">02:30 PM</option>
+                                <option value="04:00 PM">04:00 PM</option>
+                                <option value="05:30 PM">05:30 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-col-right">
+                        <div class="form-group">
+                            <label class="form-label">Preferred Nail Length :</label>
+                            <div class="options-inline">
+                                <label class="radio-label"><input type="radio" name="length" value="Short"> Short</label>
+                                <label class="radio-label"><input type="radio" name="length" value="Medium" checked> Medium</label>
+                                <label class="radio-label"><input type="radio" name="length" value="Long"> Long</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Extra Services :</label>
+                            <div class="options-grid-2col">
+                                <label class="checkbox-label"><input type="checkbox" name="extra" value="Nail Art"> Nail Art</label>
+                                <label class="checkbox-label"><input type="checkbox" name="extra" value="Nail Polish"> Nail Polish</label>
+                                <label class="checkbox-label"><input type="checkbox" name="extra" value="Hand Spa"> Hand Spa</label>
+                                <label class="checkbox-label"><input type="checkbox" name="extra" value="Nail Extension"> Nail Extension</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cust-address">Address :</label>
+                            <textarea id="cust-address" name="address" class="form-control" rows="6" placeholder="Enter your full street address and city..."></textarea>
+                        </div>
+                        <div style="background-color: var(--primary-light); padding: 14px; border-radius: var(--radius-sm); font-size: 13px; color: var(--text-secondary); border-left: 3px solid var(--primary-rose);">
+                            📌 <strong>Note:</strong> Please arrive 10 minutes before your scheduled slot. Free cancellation up to 2 hours prior.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                    <button type="reset" class="btn btn-secondary">RESET</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav-bar">
+        <a href="index.html">HOME</a>
+        <span class="divider">|</span>
+        <a href="services.html">SERVICES</a>
+        <span class="divider">|</span>
+        <a href="gallery.html">GALLERY</a>
+        <span class="divider">|</span>
+        <a href="booking.html">BOOK APPOINTMENT</a>
+        <span class="divider">|</span>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Polish and Petals Nail Studio. All Rights Reserved.</p>
+        <p><small>Web Technology Academic Project - Prepared by Unnati Patel (92500120203)</small></p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1099 @@
+/* ==========================================================================
+   POLISH & PETALS NAIL STUDIO - MASTER STYLESHEET (style.css)
+   Subject: 01CE1306 - Web Technology Project
+   Student: Unnati Patel (92500120203) - Marwadi University
+   Semester: 3rd Semester Computer Engineering
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES (Theme Colors & Typography)
+   Concept: CSS Custom Properties for uniform theme management
+   -------------------------------------------------------------------------- */
+:root {
+    --primary-rose: #d85a7f;          /* Main brand rose pink */
+    --primary-hover: #b84164;         /* Darker shade for hover state */
+    --primary-light: #fbeaf0;         /* Soft pastel pink for backgrounds/accents */
+    --accent-gold: #c98c56;           /* Subtle warm accent */
+    --bg-page: #fff8f9;               /* Ultra soft warm page background */
+    --bg-card: #ffffff;               /* Pure white for containers/cards */
+    --text-primary: #2d2a2b;          /* High contrast main text */
+    --text-secondary: #6e6769;        /* Medium contrast subtitle/meta text */
+    --border-soft: #f2d6df;           /* Delicate border color */
+    --shadow-soft: 0 4px 15px rgba(216, 90, 127, 0.08); /* Card elevation */
+    --shadow-hover: 0 8px 25px rgba(216, 90, 127, 0.16);
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --transition: all 0.25s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   2. UNIVERSAL SELECTOR & CSS RESET
+   Concept: Universal selector (*) and CSS Box Model reset
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Includes padding & border in total element width */
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE / ELEMENT SELECTORS
+   Concept: Tag/Element Selectors
+   -------------------------------------------------------------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Grouping Selectors for Headings */
+h1, h2, h3, h4, h5 {
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+a {
+    color: var(--primary-rose);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   4. CLIENT HEADER & BRANDING (Matching fig 1.1 Wireframe)
+   Concept: Flexbox layout for header components
+   -------------------------------------------------------------------------- */
+.site-header {
+    background-color: var(--bg-card);
+    border-bottom: 2px solid var(--border-soft);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    width: 120px;
+}
+
+.brand-logo-icon {
+    width: 46px;
+    height: 46px;
+    background: linear-gradient(135deg, #ffd1dc, #fbcfe8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(216, 90, 127, 0.2);
+    font-size: 22px;
+}
+
+.header-center {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.brand-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--primary-rose);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.brand-subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.heart-icons {
+    color: var(--primary-rose);
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.header-right {
+    width: 120px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-login-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: var(--primary-light);
+    color: var(--primary-rose);
+    border-radius: var(--radius-lg);
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid var(--border-soft);
+}
+
+.profile-login-link:hover {
+    background-color: var(--primary-rose);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(216, 90, 127, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   5. NAVIGATION BAR (Wireframe fig 1.1 - 1.5)
+   Concept: CSS Flexbox for horizontal navigation menu
+   -------------------------------------------------------------------------- */
+.main-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-soft);
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: 14px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+/* Pseudo-class :hover and .active class */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-rose);
+    background-color: var(--primary-light);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 3px;
+    background-color: var(--primary-rose);
+    border-radius: 3px 3px 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. MAIN CONTAINER & SECTION STYLING
+   Concept: Box Model (max-width, margin auto, padding)
+   -------------------------------------------------------------------------- */
+.page-container {
+    max-width: 1100px;
+    width: 92%;
+    margin: 35px auto;
+    flex: 1; /* Pushes footer to bottom */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 28px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-rose);
+    border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   7. HERO SECTION (Wireframe fig 1.1)
+   Concept: CSS Flexbox 2-Column Hero Layout
+   -------------------------------------------------------------------------- */
+.hero-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-soft);
+    padding: 40px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-subtitle-small {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.hero-main-title {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--primary-rose);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.hero-description {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 26px;
+    line-height: 1.7;
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-image-box {
+    width: 100%;
+    height: 270px;
+    background: linear-gradient(135deg, #fdedf2 0%, #fae1e8 100%);
+    border: 2px dashed var(--border-soft);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(216, 90, 127, 0.05);
+}
+
+.hero-illustration {
+    text-align: center;
+}
+
+.hero-illustration .icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.hero-illustration p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-rose);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #d1cbd0;
+    display: inline-block;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background-color: var(--primary-rose);
+    width: 22px;
+    border-radius: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   8. BUTTONS STYLING
+   Concept: CSS Box Model & Transitions for Interactive Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-rose);
+    color: #ffffff;
+    border-color: var(--primary-rose);
+    box-shadow: 0 4px 12px rgba(216, 90, 127, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(216, 90, 127, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--text-secondary);
+    border-color: #d1cbd0;
+}
+
+.btn-secondary:hover {
+    background-color: #f7f4f5;
+    color: var(--text-primary);
+    border-color: #b5aeb3;
+}
+
+.btn-sm {
+    padding: 7px 15px;
+    font-size: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   9. WHY CHOOSE US / FEATURE CARDS (fig 1.1)
+   Concept: CSS Flexbox / Grid for 4-box card layout
+   -------------------------------------------------------------------------- */
+.why-choose-us {
+    margin-top: 10px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 26px 18px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-rose);
+}
+
+.feature-symbol {
+    font-size: 32px;
+    color: var(--primary-rose);
+    margin-bottom: 12px;
+}
+
+.feature-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.feature-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   10. DATA TABLES STYLING (Services, Bookings, Customers)
+   Concept: HTML Table Styling, border-collapse, Zebra striping
+   -------------------------------------------------------------------------- */
+.table-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-soft);
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+    overflow-x: auto; /* Handles responsiveness on small screens */
+    margin-bottom: 30px;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapses borders into a single border */
+    font-size: 14px;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 14px 18px;
+    border: 1px solid var(--border-soft);
+    vertical-align: middle;
+}
+
+.custom-table th {
+    background-color: var(--primary-light);
+    color: var(--primary-rose);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+/* Pseudo-class :nth-child(even) for Zebra Striping */
+.custom-table tbody tr:nth-child(even) {
+    background-color: #fffbfc;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #fdf0f4;
+    transition: background-color 0.15s ease;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.price-tag {
+    font-weight: 700;
+    color: var(--primary-rose);
+    font-size: 15px;
+}
+
+/* Promotional Banner Box (Matching fig 1.2) */
+.promo-box {
+    background: linear-gradient(135deg, #fff0f5 0%, #fbeaf0 100%);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+}
+
+.promo-icon {
+    font-size: 38px;
+}
+
+.promo-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-rose);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.promo-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   11. GALLERY SECTION (Wireframe fig 1.3)
+   Concept: CSS Grid layout (2 rows x 5 columns) & image hover effects
+   -------------------------------------------------------------------------- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.gallery-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.gallery-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-rose);
+}
+
+.gallery-image-box {
+    width: 100%;
+    height: 145px;
+    background: linear-gradient(135deg, #fff1f5 0%, #fae1e8 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.nail-art-preview {
+    width: 60px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 30px 30px 10px 10px;
+    border: 2px solid var(--border-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.gallery-card:hover .nail-art-preview {
+    transform: scale(1.1);
+    border-color: var(--primary-rose);
+}
+
+.gallery-title {
+    padding: 12px 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   12. FORMS & INPUT CONTROLS (Booking fig 1.4 & Contact fig 1.5)
+   Concept: Form Styling, pseudo-class :focus, box-shadow rings
+   -------------------------------------------------------------------------- */
+.form-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 35px 40px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 30px;
+}
+
+.form-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 7px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid #dcd3d6;
+    border-radius: var(--radius-sm);
+    background-color: #ffffff;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+/* Pseudo-class :focus */
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-rose);
+    box-shadow: 0 0 0 3px rgba(216, 90, 127, 0.18);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* Radio & Checkbox Groups */
+.options-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.options-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-top: 4px;
+}
+
+.radio-label,
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--primary-rose); /* Modern CSS property for colored form controls */
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   13. CONTACT PAGE LAYOUT (Wireframe fig 1.5)
+   Concept: CSS 3-Column Flex/Grid Layout
+   -------------------------------------------------------------------------- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr 1.1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.contact-info-card,
+.contact-map-card,
+.contact-form-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 25px;
+    box-shadow: var(--shadow-soft);
+}
+
+.contact-info-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-rose);
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 8px;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.detail-icon {
+    font-size: 18px;
+    color: var(--primary-rose);
+    min-width: 24px;
+}
+
+/* Map Simulation Box */
+.map-box {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    background: #eef2f5;
+    border: 1px dashed #b8c4ce;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.map-pin {
+    font-size: 40px;
+    color: #e63946;
+    margin-bottom: 10px;
+    animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* --------------------------------------------------------------------------
+   14. ADMIN LOGIN PAGE (Wireframe fig 2.1)
+   Concept: Centered Flexbox Modal / Card
+   -------------------------------------------------------------------------- */
+.admin-login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 20px;
+}
+
+.admin-login-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 40px 50px;
+    box-shadow: var(--shadow-hover);
+    display: grid;
+    grid-template-columns: 180px 280px;
+    gap: 40px;
+    align-items: center;
+    max-width: 580px;
+    width: 100%;
+}
+
+.admin-avatar-col {
+    text-align: center;
+    border-right: 1px solid var(--border-soft);
+    padding-right: 30px;
+}
+
+.admin-avatar-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    border: 2px solid var(--border-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    margin: 0 auto 15px auto;
+}
+
+.admin-login-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.back-to-site-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   15. ADMIN DASHBOARD & SIDEBAR LAYOUT (Wireframe figs 2.2 - 2.5)
+   Concept: CSS Grid Layout for Admin Panel (Sidebar + Content)
+   -------------------------------------------------------------------------- */
+.admin-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: calc(100vh - 120px);
+    background-color: #fcf9fa;
+}
+
+.admin-sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid var(--border-soft);
+    padding: 24px 0;
+}
+
+.sidebar-heading {
+    padding: 0 24px 16px 24px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--primary-rose);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 12px;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background-color: var(--primary-light);
+    color: var(--primary-rose);
+    border-left: 4px solid var(--primary-rose);
+    padding-left: 20px;
+}
+
+.sidebar-icon {
+    font-size: 16px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.admin-content-area {
+    padding: 35px 40px;
+}
+
+.admin-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+/* --------------------------------------------------------------------------
+   16. DASHBOARD METRIC CARDS (fig 2.2)
+   Concept: CSS Grid 2x2 layout & card styling
+   -------------------------------------------------------------------------- */
+.dashboard-metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.metric-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-rose);
+}
+
+.metric-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.metric-value {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--primary-rose);
+    line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   17. STATUS BADGES & ACTION BUTTONS (fig 2.3 & 2.4)
+   -------------------------------------------------------------------------- */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    text-transform: capitalize;
+}
+
+.badge-success {
+    background-color: #e6f7ec;
+    color: #1e7e34;
+    border: 1px solid #c3e6cb;
+}
+
+.badge-warning {
+    background-color: #fff8e6;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.action-links a {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 4px;
+}
+
+.action-links a.action-delete {
+    color: #dc3545;
+}
+
+.action-links a.action-delete:hover {
+    color: #a71d2a;
+}
+
+/* --------------------------------------------------------------------------
+   18. FOOTER & BOTTOM NAVIGATION (Wireframe figs 1.1 - 1.5)
+   -------------------------------------------------------------------------- */
+.bottom-nav-bar {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-soft);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.bottom-nav-bar a {
+    color: var(--text-secondary);
+}
+
+.bottom-nav-bar a:hover {
+    color: var(--primary-rose);
+}
+
+.bottom-nav-bar .divider {
+    color: #d8ced3;
+}
+
+.site-footer {
+    background-color: #2b2527;
+    color: #f1e9ec;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    margin-top: auto;
+}
+
+.site-footer p {
+    margin: 4px 0;
+}
+
+/* --------------------------------------------------------------------------
+   19. MEDIA QUERIES (Responsive Design)
+   Concept: CSS @media query for tablet & mobile adaptability
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .hero-card {
+        flex-direction: column;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .header-left, .header-right {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .form-grid-2col {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-login-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-avatar-col {
+        border-right: none;
+        border-bottom: 1px solid var(--border-soft);
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    
+    .dashboard-metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}

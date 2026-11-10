@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ====================================================================
+         POLISH AND PETALS NAIL STUDIO - MANAGE SERVICES (fig 2.3)
+         Folder: admin/
+         ==================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish and Petals - Manage Services</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-left">
+            <div class="brand-logo-icon">💅</div>
+        </div>
+        <div class="header-center">
+            <h1 class="brand-title">POLISH AND PETALS</h1>
+            <p class="brand-subtitle">Admin Control Panel</p>
+        </div>
+        <div class="header-right">
+            <a href="../client/index.html" class="profile-login-link">
+                <span>🚪</span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <h3 class="sidebar-heading">ADMIN PANEL</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="sidebar-link"><span class="sidebar-icon">🏠</span><span>Dashboard</span></a></li>
+                <li><a href="manageservices.html" class="sidebar-link active"><span class="sidebar-icon">⚙</span><span>Manage Services</span></a></li>
+                <li><a href="bookings.html" class="sidebar-link"><span class="sidebar-icon">📅</span><span>View Bookings</span></a></li>
+                <li><a href="customers.html" class="sidebar-link"><span class="sidebar-icon">👤</span><span>Customer List</span></a></li>
+                <li><a href="../client/contact.html" class="sidebar-link"><span class="sidebar-icon">✉</span><span>Contact Messages</span></a></li>
+                <li><a href="../client/index.html" class="sidebar-link" style="color: #dc3545;"><span class="sidebar-icon">🚪</span><span>Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="admin-content-area">
+            <div class="admin-top-bar">
+                <h2 style="font-size: 22px; color: var(--text-primary);">MANAGE SERVICES</h2>
+                <button type="button" class="btn btn-primary btn-sm" onclick="alert('Add New Service modal will open here in full backend version.');">
+                    + ADD NEW SERVICE
+                </button>
+            </div>
+
+            <div class="table-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr class="text-center">
+                            <th>SERVICE ID</th>
+                            <th style="text-align: left;">SERVICE</th>
+                            <th>PRICE (₹)</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td><strong>101</strong></td>
+                            <td style="text-align: left;">Basic Manicure</td>
+                            <td class="price-tag">300</td>
+                            <td><span class="badge badge-success">Available</span></td>
+                            <td class="action-links">
+                                <a href="#" onclick="alert('Editing Service 101'); return false;">Edit</a> | 
+                                <a href="#" class="action-delete" onclick="alert('Delete requested for Service 101'); return false;">Delete</a>
+                            </td>
+                        </tr>
+                        <tr class="text-center">
+                            <td><strong>102</strong></td>
+                            <td style="text-align: left;">Gel Nails</td>
+                            <td class="price-tag">900</td>
+                            <td><span class="badge badge-success">Available</span></td>
+                            <td class="action-links">
+                                <a href="#" onclick="alert('Editing Service 102'); return false;">Edit</a> | 
+                                <a href="#" class="action-delete" onclick="alert('Delete requested for Service 102'); return false;">Delete</a>
+                            </td>
+                        </tr>
+                        <tr class="text-center">
+                            <td><strong>103</strong></td>
+                            <td style="text-align: left;">Nail Extension</td>
+                            <td class="price-tag">1500</td>
+                            <td><span class="badge badge-success">Available</span></td>
+                            <td class="action-links">
+                                <a href="#" onclick="alert('Editing Service 103'); return false;">Edit</a> | 
+                                <a href="#" class="action-delete" onclick="alert('Delete requested for Service 103'); return false;">Delete</a>
+                            </td>
+                        </tr>
+                        <tr class="text-center">
+                            <td><strong>104</strong></td>
+                            <td style="text-align: left;">Nail Art</td>
+                            <td class="price-tag">700</td>
+                            <td><span class="badge badge-success">Available</span></td>
+                            <td class="action-links">
+                                <a href="#" onclick="alert('Editing Service 104'); return false;">Edit</a> | 
+                                <a href="#" class="action-delete" onclick="alert('Delete requested for Service 104'); return false;">Delete</a>
+                            </td>
+                        </tr>
+                        <tr class="text-center">
+                            <td><strong>105</strong></td>
+                            <td style="text-align: left;">Spa Manicure</td>
+                            <td class="price-tag">600</td>
+                            <td><span class="badge badge-success">Available</span></td>
+                            <td class="action-links">
+                                <a href="#" onclick="alert('Editing Service 105'); return false;">Edit</a> | 
+                                <a href="#" class="action-delete" onclick="alert('Delete requested for Service 105'); return false;">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Polish and Petals Nail Studio. All Rights Reserved.</p>
+        <p><small>Web Technology Academic Project - Prepared by Unnati Patel (92500120203)</small></p>
+    </footer>
+
+</body>
+</html>

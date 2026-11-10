@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ====================================================================
+         POLISH AND PETALS NAIL STUDIO - ADMIN LOGIN (fig 2.1)
+         Folder: admin/
+         ==================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish and Petals - Admin Login</title>
+    <!-- Relative path: goes up one folder (..) to find style.css -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body style="background: linear-gradient(135deg, #fff0f5 0%, #fde4ec 100%);">
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-left">
+            <div class="brand-logo-icon">💅</div>
+        </div>
+        <div class="header-center">
+            <h1 class="brand-title">POLISH AND PETALS</h1>
+            <p class="brand-subtitle">Studio Administration Portal</p>
+        </div>
+        <div class="header-right">
+            <!-- Relative link to client home: ../client/index.html -->
+            <a href="../client/index.html" class="profile-login-link">
+                <span>🏠</span>
+                <span>Website</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="admin-login-wrapper">
+        <div class="admin-login-card">
+            <div class="admin-avatar-col">
+                <div class="admin-avatar-icon">👤</div>
+                <h2 class="admin-login-title">ADMIN LOGIN</h2>
+            </div>
+            <div class="admin-form-col">
+                <!-- Action goes directly to dashboard.html in same admin folder -->
+                <form action="dashboard.html" method="get">
+                    <div class="form-group">
+                        <label class="form-label" for="admin-user">Username :</label>
+                        <input type="text" id="admin-user" name="username" class="form-control" value="admin" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="admin-pass">Password :</label>
+                        <input type="password" id="admin-pass" name="password" class="form-control" value="••••••••" placeholder="Enter password" required>
+                    </div>
+                    <div class="form-actions" style="justify-content: flex-start; margin-top: 20px;">
+                        <button type="submit" class="btn btn-primary btn-sm">LOGIN</button>
+                        <button type="reset" class="btn btn-secondary btn-sm">RESET</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div class="back-to-site-link">
+        <!-- Relative link back to client website -->
+        <a href="../client/index.html">← Back to Client Website (Home)</a>
+    </div>
+
+    <footer class="site-footer" style="margin-top: auto;">
+        <p>&copy; 2026 Polish and Petals Nail Studio. All Rights Reserved.</p>
+        <p><small>Web Technology Academic Project - Prepared by Unnati Patel (92500120203)</small></p>
+    </footer>
+
+</body>
+</html>

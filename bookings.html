@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ====================================================================
+         POLISH AND PETALS NAIL STUDIO - CUSTOMER BOOKINGS (fig 2.4)
+         Folder: admin/
+         ==================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish and Petals - View Bookings</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-left">
+            <div class="brand-logo-icon">💅</div>
+        </div>
+        <div class="header-center">
+            <h1 class="brand-title">POLISH AND PETALS</h1>
+            <p class="brand-subtitle">Admin Control Panel</p>
+        </div>
+        <div class="header-right">
+            <a href="../client/index.html" class="profile-login-link">
+                <span>🚪</span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <h3 class="sidebar-heading">ADMIN PANEL</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="sidebar-link"><span class="sidebar-icon">🏠</span><span>Dashboard</span></a></li>
+                <li><a href="manageservices.html" class="sidebar-link"><span class="sidebar-icon">⚙</span><span>Manage Services</span></a></li>
+                <li><a href="bookings.html" class="sidebar-link active"><span class="sidebar-icon">📅</span><span>View Bookings</span></a></li>
+                <li><a href="customers.html" class="sidebar-link"><span class="sidebar-icon">👤</span><span>Customer List</span></a></li>
+                <li><a href="../client/contact.html" class="sidebar-link"><span class="sidebar-icon">✉</span><span>Contact Messages</span></a></li>
+                <li><a href="../client/index.html" class="sidebar-link" style="color: #dc3545;"><span class="sidebar-icon">🚪</span><span>Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="admin-content-area">
+            <h2 class="section-title" style="margin-bottom: 25px;">CUSTOMER BOOKINGS</h2>
+
+            <div class="table-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr class="text-center">
+                            <th>BOOKING ID</th>
+                            <th style="text-align: left;">CUSTOMER NAME</th>
+                            <th style="text-align: left;">SERVICE</th>
+                            <th>DATE</th>
+                            <th>TIME</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td><strong>201</strong></td>
+                            <td style="text-align: left;">Anjali Sharma</td>
+                            <td style="text-align: left;">Gel Nails</td>
+                            <td>20-05-2024</td>
+                            <td>11:00 AM</td>
+                            <td><span class="badge badge-success">Confirmed</span></td>
+                        </tr>
+                        <tr class="text-center">
+                            <td><strong>202</strong></td>
+                            <td style="text-align: left;">Priya Patel</td>
+                            <td style="text-align: left;">Nail Art</td>
+                            <td>20-05-2024</td>
+                            <td>01:30 PM</td>
+                            <td><span class="badge badge-success">Confirmed</span></td>
+                        </tr>
+                        <tr class="text-center">
+                            <td><strong>203</strong></td>
+                            <td style="text-align: left;">Neha Verma</td>
+                            <td style="text-align: left;">Nail Extension</td>
+                            <td>21-05-2024</td>
+                            <td>03:00 PM</td>
+                            <td><span class="badge badge-warning">Pending</span></td>
+                        </tr>
+                        <tr class="text-center">
+                            <td><strong>204</strong></td>
+                            <td style="text-align: left;">Riya Singh</td>
+                            <td style="text-align: left;">Basic Manicure</td>
+                            <td>21-05-2024</td>
+                            <td>05:00 PM</td>
+                            <td><span class="badge badge-success">Confirmed</span></td>
+                        </tr>
+                        <tr class="text-center">
+                            <td><strong>205</strong></td>
+                            <td style="text-align: left;">Meera Joshi</td>
+                            <td style="text-align: left;">Spa Manicure</td>
+                            <td>22-05-2024</td>
+                            <td>12:00 PM</td>
+                            <td><span class="badge badge-warning">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Polish and Petals Nail Studio. All Rights Reserved.</p>
+        <p><small>Web Technology Academic Project - Prepared by Unnati Patel (92500120203)</small></p>
+    </footer>
+
+</body>
+</html>

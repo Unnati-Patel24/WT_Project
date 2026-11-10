@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ====================================================================
+         POLISH AND PETALS NAIL STUDIO - ADMIN DASHBOARD (fig 2.2)
+         Folder: admin/
+         ==================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish and Petals - Admin Dashboard</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-left">
+            <div class="brand-logo-icon">💅</div>
+        </div>
+        <div class="header-center">
+            <h1 class="brand-title">POLISH AND PETALS</h1>
+            <p class="brand-subtitle">Admin Control Panel</p>
+        </div>
+        <div class="header-right">
+            <!-- Logout link to client website -->
+            <a href="../client/index.html" class="profile-login-link">
+                <span>🚪</span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <h3 class="sidebar-heading">ADMIN PANEL</h3>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="sidebar-link active"><span class="sidebar-icon">🏠</span><span>Dashboard</span></a></li>
+                <li><a href="manageservices.html" class="sidebar-link"><span class="sidebar-icon">⚙</span><span>Manage Services</span></a></li>
+                <li><a href="bookings.html" class="sidebar-link"><span class="sidebar-icon">📅</span><span>View Bookings</span></a></li>
+                <li><a href="customers.html" class="sidebar-link"><span class="sidebar-icon">👤</span><span>Customer List</span></a></li>
+                <li><a href="../client/contact.html" class="sidebar-link"><span class="sidebar-icon">✉</span><span>Contact Messages</span></a></li>
+                <li><a href="../client/index.html" class="sidebar-link" style="color: #dc3545;"><span class="sidebar-icon">🚪</span><span>Logout</span></a></li>
+            </ul>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="admin-content-area">
+            <h2 class="section-title" style="margin-bottom: 35px;">DASHBOARD</h2>
+            
+            <div class="dashboard-metrics-grid">
+                <div class="metric-card">
+                    <p class="metric-title">Total Services</p>
+                    <h3 class="metric-value">12</h3>
+                    <p style="font-size: 12px; color: #888; margin-top: 8px;">Active Salon Catalog</p>
+                </div>
+                <div class="metric-card">
+                    <p class="metric-title">Total Bookings</p>
+                    <h3 class="metric-value">28</h3>
+                    <p style="font-size: 12px; color: #888; margin-top: 8px;">Current Month Appointments</p>
+                </div>
+                <div class="metric-card">
+                    <p class="metric-title">Total Customers</p>
+                    <h3 class="metric-value">35</h3>
+                    <p style="font-size: 12px; color: #888; margin-top: 8px;">Registered Clients</p>
+                </div>
+                <div class="metric-card">
+                    <p class="metric-title">Total Messages</p>
+                    <h3 class="metric-value">15</h3>
+                    <p style="font-size: 12px; color: #888; margin-top: 8px;">Inquiries via Contact Form</p>
+                </div>
+            </div>
+
+            <div style="max-width: 750px; margin: 30px auto 0 auto; background: #ffffff; border: 1px solid var(--border-soft); border-radius: var(--radius-md); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow-soft);">
+                <div>
+                    <strong style="color: var(--primary-rose);">Studio Status:</strong>
+                    <span style="color: #28a745; margin-left: 6px; font-weight: 600;">● Online & Accepting Bookings</span>
+                </div>
+                <div>
+                    <a href="bookings.html" class="btn btn-primary btn-sm">Review New Bookings</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Polish and Petals Nail Studio. All Rights Reserved.</p>
+        <p><small>Web Technology Academic Project - Prepared by Unnati Patel (92500120203)</small></p>
+    </footer>
+
+</body>
+</html>
